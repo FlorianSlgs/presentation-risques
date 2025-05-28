@@ -1,5 +1,7 @@
 # PresentationRisques
 
+Projet de présentation de la plaquette risques de la DDTM de l'Hérault en version numérique.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
 
 ## Development server
