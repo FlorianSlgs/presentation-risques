@@ -1,0 +1,33 @@
+nav button {
+  cursor: pointer;
+}
+
+/* Décale légèrement le bouton flèche vers le bas */
+.arrow-nav {
+  margin-top: 12px; // ajuste la valeur selon le rendu souhaité
+}
+
+/* Style du bouton contenant la flèche */
+.arrow-nav button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Flèche : couleur par défaut */
+.arrow-nav svg {
+  stroke: #fff; // couleur par défaut (blanc)
+  transition: stroke 0.2s, transform 0.2s;
+}
+
+/* Effet au survol */
+.arrow-nav button:hover svg {
+  stroke: #b8b8b8; // couleur au survol (bleu clair, adapte selon ta palette)
+  transform: translateY(4px) scale(1.08); // descend et agrandit légèrement la flèche
+}
