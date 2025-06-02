@@ -162,8 +162,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   getDotClasses(index: number): string {
     const baseClasses = 'w-3 h-3 rounded-full transition-all duration-300 hover:scale-125';
-    const activeClasses = 'bg-white scale-125';
-    const inactiveClasses = 'bg-white/50 hover:bg-white/75';
+    const activeClasses = 'bg-black scale-125';
+    const inactiveClasses = 'bg-black/50 hover:bg-black/75';
     
     return `${baseClasses} ${index === this.currentSection ? activeClasses : inactiveClasses}`;
   }
