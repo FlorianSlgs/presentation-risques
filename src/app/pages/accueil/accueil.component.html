@@ -1,22 +1,30 @@
-<section class="h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-800 text-white bg-[url('assets/images/jpg/la-goule-incendie.jpg')] bg-cover bg-center">
+<section class="h-screen w-full flex flex-col items-center justify-center bg-[url('assets/images/jpg/la-goule-incendie.jpg')] bg-cover bg-center relative">
     <div class="absolute top-0 left-5">
         <img src="assets/images/svg/PREF_Herault_RVB.svg" alt="Logo" class="w-40 h-40" />
     </div>
 
-    <div class="text-center">
-        <p class="text-xl max-w-2xl mx-auto">TOUS RÉSILIENTS FACE AUX</p>
-        <p class="text-xl max-w-2xl mx-auto">RISQUES NATURELS</p>
-        <p class="text-xl max-w-2xl mx-auto">DANS L’HÉRAULT</p>
+    <!-- Remonte le bloc texte avec mb-20 -->
+    <div class="text-center mb-30">
+        <p class="font-bold text-4xl max-w-2xl mx-auto my-1 text-black">TOUS RÉSILIENTS FACE AUX</p>
+        <p class="font-bold text-6xl max-w-2xl mx-auto my-1 text-etat">RISQUES NATURELS</p>
+        <p class="font-bold text-4xl max-w-2xl mx-auto my-2 text-black">DANS L’HÉRAULT</p>
     </div>
 
-    <div class="text-center">
-        <p class="">ALÉA</p>
-        <img src="assets/images/svg/schema_risques/risque_1.svg" alt="aléa" class="w-14 h-14" />
-        <span>+</span>
-        <p class="">ENJEU</p>
-        <img src="assets/images/svg/schema_risques/risque_2.svg" alt="enjeu" class="w-14 h-14" />
-        <span>=</span>
-        <p class="">RISQUE</p>
-        <img src="assets/images/svg/schema_risques/risque.svg" alt="risque" class="w-14 h-14" />
+    <!-- Centre verticalement la partie schéma -->
+    <div class="flex flex-col items-center justify-center">
+        <div class="flex justify-center gap-12 mb-3">
+            <p class="text-center text-xl font-semibold w-20 -translate-x-13 transform">ALÉA</p>
+            <span class="w-8"></span>
+            <p class="text-center text-xl font-semibold w-20">ENJEU</p>
+            <span class="w-8"></span>
+            <p class="text-center text-xl font-semibold w-20 translate-x-13 transform">RISQUE</p>
+        </div>
+        <div class="flex items-center justify-center gap-8">
+            <img src="assets/images/svg/schema_risques/risque_1.svg" alt="aléa" class="w-45 h-45" />
+            <span class="text-3xl font-bold">+</span>
+            <img src="assets/images/svg/schema_risques/risque_2.svg" alt="enjeu" class="w-45 h-45" />
+            <span class="text-3xl font-bold">=</span>
+            <img src="assets/images/svg/schema_risques/risque.svg" alt="risque" class="w-45 h-45" />
+        </div>
     </div>
 </section>
