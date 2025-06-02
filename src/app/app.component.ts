@@ -23,7 +23,7 @@ import { CommonModule } from '@angular/common';
       <!-- Sections container -->
       <div 
         #sectionsContainer
-        class="snap-scroll-wrapper transition-transform duration-700 ease-in-out"
+        class="snap-scroll-wrapper transition-transform duration-500 ease-out"
         [style.transform]="'translateY(-' + (currentSection * 100) + 'vh)'">
         
         <!-- Section 1 -->
@@ -187,9 +187,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private touchStartY: number | null = null;
 
   ngAfterViewInit() {
-    // Configuration du conteneur
+    // Configuration du conteneur avec transition plus rapide
     if (this.sectionsContainer) {
-      this.sectionsContainer.nativeElement.style.transitionDuration = '700ms';
+      this.sectionsContainer.nativeElement.style.transitionDuration = '500ms';
     }
   }
 
@@ -205,22 +205,34 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     
     if (this.isScrolling) return;
 
-    // Amélioration pour trackpad : accumulation des deltas
-    this.wheelDelta += event.deltaY;
+    // Détection du type d'appareil de pointage
+    const isTrackpad = Math.abs(event.deltaY) < 50;
     
-    clearTimeout(this.wheelTimeout);
-    this.wheelTimeout = setTimeout(() => {
-      // Seuil plus élevé pour éviter les micro-mouvements du trackpad
-      if (Math.abs(this.wheelDelta) > 100) {
-        if (this.wheelDelta > 0) {
-          this.nextSection();
-        } else {
-          this.previousSection();
+    if (isTrackpad) {
+      // Gestion spécifique trackpad avec accumulation
+      this.wheelDelta += event.deltaY;
+      
+      clearTimeout(this.wheelTimeout);
+      this.wheelTimeout = setTimeout(() => {
+        // Seuil adaptatif pour trackpad
+        if (Math.abs(this.wheelDelta) > 30) {
+          if (this.wheelDelta > 0) {
+            this.nextSection();
+          } else {
+            this.previousSection();
+          }
         }
+        this.wheelDelta = 0;
+      }, 100);
+    } else {
+      // Gestion directe pour souris classique
+      clearTimeout(this.wheelTimeout);
+      if (event.deltaY > 0) {
+        this.nextSection();
+      } else {
+        this.previousSection();
       }
-      // Reset du delta après traitement
-      this.wheelDelta = 0;
-    }, 150); // Délai plus long pour les trackpads
+    }
   }
 
   @HostListener('keydown', ['$event'])
@@ -291,9 +303,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.isScrolling = true;
     this.currentSection = index;
 
+    // Durée de transition réduite pour plus de réactivité
     setTimeout(() => {
       this.isScrolling = false;
-    }, 700);
+    }, 500);
   }
 
   getDotClasses(index: number): string {
