@@ -1,11 +1,11 @@
 <!-- app.component.html (version mise à jour) -->
 <div class="snap-scroll-container relative h-screen overflow-hidden">
   <!-- Navigation dots -->
-  <nav class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col space-y-3">
+  <nav class="fixed right-2 sm:right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col space-y-3">
     <button
       *ngFor="let section of sections; let i = index"
       (click)="scrollToSection(i)"
-      [class]="getDotClasses(i)"
+      [ngClass]="getDotClasses(i) + ' transition-colors duration-300 ' + (isArrowWhite() ? 'border-white' : 'border-black')"
       [attr.aria-label]="'Aller à la section ' + (i + 1)"
       [title]="section.title">
       <span class="sr-only">Section {{ i + 1 }}</span>
@@ -26,7 +26,7 @@
         (nextSection)="onIntroNext()">
       </app-accueil>
       
-      <!-- Section Types de Risques -->
+      <!-- Section Page 1 -->
       <app-page1
         *ngIf="section.id === 'page1'">
       </app-page1>
@@ -46,18 +46,29 @@
   </div>
 
   <!-- Navigation arrows -->
-  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex flex-col space-y-2 arrow-nav">
+  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex flex-col space-y-2 arrow-nav mb-3.5 lg:mb-0  hidden sm:block">
     <button
       *ngIf="currentSection < sections.length - 1"
       (click)="nextSection()">
-      <svg class="w-16 h-6" fill="none" stroke="currentColor" viewBox="0 0 60 20" width="60" height="20">
+      <svg
+        class="w-16 h-6 transition-colors duration-300"
+        [ngClass]="isArrowWhite() ? 'text-white' : 'text-black'"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 60 20"
+        width="60"
+        height="20"
+      >
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M44 6l-14 12L16 6"></path>
       </svg>
     </button>
   </div>
 
   <!-- Instructions -->
-  <div class="fixed bottom-6 right-6 z-50 text-black/80 text-sm font-medium">
+  <div
+    class="fixed bottom-6 right-6 z-50 text-sm font-medium hidden sm:block transition-colors duration-300"
+    [ngClass]="isArrowWhite() ? 'text-white/75' : 'text-black/80'"
+  >
     <p>Faire défiler vers le bas pour découvrir cette présentation numérique.</p>
   </div>
 </div>

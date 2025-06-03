@@ -160,16 +160,20 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     }, 500);
   }
 
-  getDotClasses(index: number): string {
-    const baseClasses = 'w-3 h-3 rounded-full transition-all duration-300 hover:scale-125';
-    const activeClasses = 'bg-black scale-125';
-    const inactiveClasses = 'bg-black/50 hover:bg-black/75';
-    
-    return `${baseClasses} ${index === this.currentSection ? activeClasses : inactiveClasses}`;
+  getDotClasses(i: number): string {
+    const isActive = this.currentSection === i;
+    const base = 'w-2 h-2 sm:w-3 sm:h-3 rounded-full border-2';
+    const color = this.isArrowWhite() ? 'bg-white border-white' : 'bg-black border-black';
+    return `${base} ${color} ${isActive ? 'scale-125' : 'opacity-60'}`;
   }
 
   // Méthode pour gérer l'événement du composant intro
   onIntroNext() {
     this.nextSection();
+  }
+
+  isArrowWhite(): boolean {
+    // page1 et suivantes (index >= 1)
+    return this.currentSection >= 1;
   }
 }
