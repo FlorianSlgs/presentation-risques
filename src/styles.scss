@@ -4,6 +4,7 @@
 
 @theme {
   --color-etat: #000091;
+  --screens-short: 700px;
 }
 
 body {
@@ -12,4 +13,10 @@ body {
 
 button {
   cursor: pointer;
+}
+
+@media (max-height: 800px) {
+  .hide-on-short {
+    display: none !important;
+  }
 }

@@ -2,11 +2,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VideoComponent } from './video/video.component';
+import { TypesRisquesComponent } from './types-risques/types-risques.component';
 
 @Component({
   selector: 'app-page1',
   standalone: true,
-  imports: [CommonModule, VideoComponent],
+  imports: [CommonModule, VideoComponent, TypesRisquesComponent],
   templateUrl:"page1.component.html"
 })
 export class Page1Component {
@@ -16,7 +17,7 @@ export class Page1Component {
 
 cards = [
   "Vidéo",
-  "Types d'inondation",
+  "Types d'inondations",
   "Conséquences",
   "Actions préventives"
 ];
