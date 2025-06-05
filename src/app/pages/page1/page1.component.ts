@@ -53,4 +53,22 @@ getCardClass(index: number): string {
   return 'hidden';
 }
 
+touchStartX = 0;
+
+onTouchStart(event: TouchEvent) {
+  this.touchStartX = event.changedTouches[0].screenX;
+}
+
+onTouchEnd(event: TouchEvent) {
+  const touchEndX = event.changedTouches[0].screenX;
+  const deltaX = touchEndX - this.touchStartX;
+  if (Math.abs(deltaX) > 40) { // seuil pour éviter les petits mouvements
+    if (deltaX < 0) {
+      this.next();
+    } else {
+      this.prev();
+    }
+  }
+}
+
 }
