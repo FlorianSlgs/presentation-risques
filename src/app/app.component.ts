@@ -47,12 +47,16 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     if (this.sectionsContainer) {
       this.sectionsContainer.nativeElement.style.transitionDuration = '500ms';
     }
+    // Empêche le scroll natif du body sur mobile
+    document.body.style.overflow = 'hidden';
   }
 
   ngOnDestroy() {
     if (this.wheelTimeout) {
       clearTimeout(this.wheelTimeout);
     }
+    // Restaure le scroll natif si besoin
+    document.body.style.overflow = '';
   }
 
   @HostListener('wheel', ['$event'])
