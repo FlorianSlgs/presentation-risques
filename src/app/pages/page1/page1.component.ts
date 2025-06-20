@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { VideoComponent } from './video/video.component';
 import { TypesRisquesComponent } from './types-risques/types-risques.component';
 import { ConsequencesComponent } from "./consequences/consequences.component";
+import { ActionsPreventionComponent } from './actions-prevention/actions-prevention.component';
 
 @Component({
   selector: 'app-page1',
   standalone: true,
-  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent],
+  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent, ActionsPreventionComponent],
   templateUrl:"page1.component.html"
 })
 export class Page1Component {

@@ -1,0 +1,114 @@
+.switcher-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.buttons {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.buttons button.active {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+.content {
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  min-height: 150px; /* Pour éviter le décalage à l'affichage */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.text-content h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.svg-content {
+  position: relative; /* Nécessaire pour le positionnement absolu du pop-up */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-content svg {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Styles pour les zones interactives du SVG */
+.svg-content rect,
+.svg-content circle {
+  transition: fill 0.2s ease, stroke 0.2s ease;
+  cursor: pointer;
+  stroke: transparent; /* Pas de bordure par défaut */
+  stroke-width: 2px;
+}
+
+.svg-content rect:hover,
+.svg-content circle:hover {
+  opacity: 0.8;
+  stroke: #007bff; /* Bordure au survol */
+}
+
+/* Styles du Pop-up */
+.popup {
+  position: fixed; /* Utilisation de fixed pour que le pop-up suive la souris */
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Assurez-vous qu'il est au-dessus d'autres éléments */
+  pointer-events: none; /* Permet aux événements de souris de passer à travers le pop-up */
+  white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
+}
+
+.popup h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1em;
+  color: #a4d4b4; /* Une couleur pour le titre */
+}
+
+.popup p {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}

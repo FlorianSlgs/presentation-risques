@@ -61,6 +61,12 @@
       <app-consequences></app-consequences>
     </div>
 
+    <div
+      class="flex flex-col justify-center items-center w-full"
+      *ngIf="cards[current] === 'Actions préventives'">
+      <app-actions-prevention></app-actions-prevention>
+    </div>
+
   </div>
 
 </section>
