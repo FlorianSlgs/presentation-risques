@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './papi.component.scss'
 })
 export class PAPIComponent {
-  activeZone: number | null = null;
+  activeZone: number | null = 1;
 
   showText(zone: number) {
     this.activeZone = zone;

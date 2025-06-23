@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './ppri.component.scss'
 })
 export class PPRIComponent {
-  activeZone: number | null = null;
+  activeZone: number | null = 1;
 
   showText(zone: number) {
     this.activeZone = zone;
