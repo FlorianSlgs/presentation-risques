@@ -1,0 +1,26 @@
+<div class="max-w-md mx-auto px-2">
+  <!-- Onglets -->
+  <div class="grid grid-cols-2 gap-0 border-b border-gray-200 overflow-hidden">
+    <button
+        *ngFor="let tab of tabs; let i = index"
+        (click)="selectedTab = i"
+        class="flex-1 px-4 py-2 text-center font-semibold transition focus:outline-none
+            sm:px-6 sm:py-3 sm:text-lg"
+        [ngClass]="selectedTab === i
+        ? 'bg-white text-blue-900'
+        : 'bg-transparent text-white hover:bg-white hover:text-blue-900'"
+        type="button"
+    >
+        {{ tab.label }}
+    </button>
+    </div>
+
+  <!-- Contenu -->
+  <div class="bg-blue-900 text-white text-justify px-4 pt-2 shadow mt-0">
+    <p class="mb-4 whitespace-pre-line text-sm leading-tight hide-on-long">{{ tabs[selectedTab].content }}</p>
+    <p class="mb-4 whitespace-pre-line hide-on-short">{{ tabs[selectedTab].content1 }}</p>
+
+    <app-papi *ngIf="tabs[selectedTab].label === 'PAPI'"></app-papi>
+    <app-ppri *ngIf="tabs[selectedTab].label === 'PPRi'"></app-ppri>
+  </div>
+</div>

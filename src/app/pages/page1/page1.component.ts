@@ -1,15 +1,16 @@
-// src/app/pages/types-risques/types-risques.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { VideoComponent } from './video/video.component';
 import { TypesRisquesComponent } from './types-risques/types-risques.component';
 import { ConsequencesComponent } from "./consequences/consequences.component";
 import { ActionsPreventionComponent } from './actions-prevention/actions-prevention.component';
+import { SituationComponent } from './situation/situation.component';
 
 @Component({
   selector: 'app-page1',
   standalone: true,
-  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent, ActionsPreventionComponent],
+  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent, ActionsPreventionComponent, SituationComponent, SituationComponent],
   templateUrl:"page1.component.html"
 })
 export class Page1Component {
@@ -21,6 +22,7 @@ cards = [
   "Vidéo",
   "Types d'inondations",
   "Conséquences",
+  "Situation",
   "Actions préventives"
 ];
 current = 0;
