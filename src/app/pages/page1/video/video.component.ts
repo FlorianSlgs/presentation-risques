@@ -14,12 +14,20 @@ export class VideoComponent implements AfterViewInit {
   private player: any;
 
   ngAfterViewInit() {
-    // Charge l'API YouTube si besoin
     if (!(window as any)['YT']) {
       const tag = document.createElement('script');
       tag.src = 'https://www.youtube.com/iframe_api';
       document.body.appendChild(tag);
-      (window as any).onYouTubeIframeAPIReady = () => this.initPlayer();
+      
+      // Créer un tableau de callbacks au lieu d'écraser
+      if (!(window as any).youtubeCallbacks) {
+        (window as any).youtubeCallbacks = [];
+      }
+      (window as any).youtubeCallbacks.push(() => this.initPlayer());
+      
+      (window as any).onYouTubeIframeAPIReady = () => {
+        (window as any).youtubeCallbacks.forEach((callback: Function) => callback());
+      };
     } else {
       this.initPlayer();
     }

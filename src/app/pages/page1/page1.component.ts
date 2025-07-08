@@ -10,7 +10,7 @@ import { SituationComponent } from './situation/situation.component';
 @Component({
   selector: 'app-page1',
   standalone: true,
-  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent, ActionsPreventionComponent, SituationComponent, SituationComponent],
+  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent, ActionsPreventionComponent, SituationComponent],
   templateUrl:"page1.component.html"
 })
 export class Page1Component {
@@ -21,6 +21,7 @@ export class Page1Component {
 cards = [
   "Vidéo",
   "Types d'inondations",
+  "Situation",
   "Conséquences",
   "Situation",
   "Actions préventives"

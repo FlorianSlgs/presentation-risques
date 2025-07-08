@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-types-risques',
+  selector: 'app-types-risques-feux',
   templateUrl: './types-risques.component.html',
   imports: [
     CommonModule,
   ],
 })
-export class TypesRisquesComponent {
+export class TypesRisquesFeuxComponent {
   selectedTab = 0;
   tabs = [
     {

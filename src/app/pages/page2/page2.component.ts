@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { VideoComponent } from './video/video.component';
-import { TypesRisquesComponent } from './types-risques/types-risques.component';
-import { ConsequencesComponent } from "./consequences/consequences.component";
-import { ActionsPreventionComponent } from './actions-prevention/actions-prevention.component';
-import { SituationComponent } from './situation/situation.component';
+import { VideoFeuxComponent } from './video/video.component';
+import { TypesRisquesFeuxComponent } from './types-risques/types-risques.component';
+import { ConsequencesFeuxComponent } from "./consequences/consequences.component";
+import { ActionsPreventionFeuxComponent } from './actions-prevention/actions-prevention.component';
+import { SituationFeuxComponent } from './situation/situation.component';
 
 @Component({
   selector: 'app-page2',
   standalone: true,
-  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent, ActionsPreventionComponent, SituationComponent, SituationComponent],
+  imports: [CommonModule, VideoFeuxComponent, TypesRisquesFeuxComponent, ConsequencesFeuxComponent, ActionsPreventionFeuxComponent, SituationFeuxComponent],
   templateUrl:"page2.component.html"
 })
 export class Page2Component {
- 
+
   showMore = false;
 
   cards = [
@@ -22,7 +21,6 @@ export class Page2Component {
     "Informations",
     "Situation",
     "Conséquences",
-    "Situation",
     "Actions préventives"
   ];
   current = 0;

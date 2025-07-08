@@ -1,8 +1,8 @@
-<section class="min-h-screen w-full flex flex-col items-center justify-start  bg-gradient-to-br from-green-600 to-green-800 text-white relative">
-      
+<section class="min-h-screen w-full flex flex-col items-center justify-start bg-gradient-to-br from-green-600 to-green-800 text-white relative">
+
   <!-- Titre en haut à gauche avec ligne et logo -->
   <div class="mt-4 flex items-center w-full pr-6 max-w-none">
-    <span class="text-xl sm:text-2xl font-bold whitespace-nowrap ml-6">LE RISQUE FEU DE FORÊT</span>
+    <span class="text-xl sm:text-2xl font-bold whitespace-nowrap ml-6">LE RISQUE FEUX DE FORÊT</span>
     <img src="assets/images/svg/feux.svg" alt="Logo" class="w-11 h-11 ml-3" />
     <span class="h-px bg-white opacity-60 ml-4 flex-1 hidden sm:block"></span>
   </div>
@@ -46,7 +46,7 @@
     <div
       class="flex flex-col justify-center items-center w-full"
       *ngIf="cards[current] === 'Vidéo'">
-      <app-video></app-video>
+      <app-video-feux></app-video-feux>
     </div>
 
     <div
@@ -58,19 +58,19 @@
     <div
       class="flex flex-col justify-center items-center w-full"
       *ngIf="cards[current] === 'Situation'">
-      <app-situation></app-situation>
+      <app-situation-feux></app-situation-feux>
     </div>
 
     <div
       class="flex flex-col justify-center items-center w-full"
       *ngIf="cards[current] === 'Conséquences'">
-      <app-consequences></app-consequences>
+      <app-consequences-feux></app-consequences-feux>
     </div>
 
     <div
       class="flex flex-col justify-center items-center w-full"
       *ngIf="cards[current] === 'Actions préventives'">
-      <app-actions-prevention></app-actions-prevention>
+      <app-actions-prevention-feux></app-actions-prevention-feux>
     </div>
 
   </div>

@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import * as L from 'leaflet';
 
 @Component({
-  selector: 'app-situation',
+  selector: 'app-situation-feux',
   imports: [],
-  standalone: true,
   templateUrl: './situation.component.html',
-  styleUrl: './situation.component.scss'
+  styleUrl: './situation.component.scss',
+  standalone: true,
 })
-export class SituationComponent {
+export class SituationFeuxComponent implements OnInit, AfterViewInit {
   private map!: L.Map;
   private centroid: L.LatLngExpression = [43.5797, 3.3672];
 

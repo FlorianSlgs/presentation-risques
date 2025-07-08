@@ -2,31 +2,39 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-video',
+  selector: 'app-video-feux',
   imports: [CommonModule],
   templateUrl: './video.component.html',
   styleUrl: './video.component.scss'
 })
-export class VideoComponent implements AfterViewInit {
+export class VideoFeuxComponent implements AfterViewInit {
   showOverlay = true;
 
-  @ViewChild('youtubePlayer', { static: false }) youtubePlayer!: ElementRef<HTMLIFrameElement>;
+  @ViewChild('youtubePlayerFeux', { static: false }) youtubePlayerFeux!: ElementRef<HTMLIFrameElement>;
   private player: any;
 
   ngAfterViewInit() {
-    // Charge l'API YouTube si besoin
     if (!(window as any)['YT']) {
       const tag = document.createElement('script');
       tag.src = 'https://www.youtube.com/iframe_api';
       document.body.appendChild(tag);
-      (window as any).onYouTubeIframeAPIReady = () => this.initPlayer();
+      
+      // Ajouter au tableau de callbacks
+      if (!(window as any).youtubeCallbacks) {
+        (window as any).youtubeCallbacks = [];
+      }
+      (window as any).youtubeCallbacks.push(() => this.initPlayer());
+      
+      (window as any).onYouTubeIframeAPIReady = () => {
+        (window as any).youtubeCallbacks.forEach((callback: Function) => callback());
+      };
     } else {
       this.initPlayer();
     }
   }
 
   initPlayer() {
-    this.player = new (window as any).YT.Player('youtube-player', {
+    this.player = new (window as any).YT.Player('youtube-player-feux', {
       events: {
         'onStateChange': (event: any) => this.onPlayerStateChange(event)
       }

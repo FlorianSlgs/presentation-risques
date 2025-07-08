@@ -4,13 +4,13 @@ import { PAPIComponent } from './papi/papi.component';
 import { PPRIComponent } from './ppri/ppri.component';
 
 @Component({
-  selector: 'app-actions-prevention',
+  selector: 'app-actions-prevention-feux',
   standalone: true,
   imports: [CommonModule, PAPIComponent, PPRIComponent],
   templateUrl: './actions-prevention.component.html',
   styleUrls: ['./actions-prevention.component.scss']
 })
-export class ActionsPreventionComponent {
+export class ActionsPreventionFeuxComponent {
 selectedTab = 0;
   tabs = [
     {
