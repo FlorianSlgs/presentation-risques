@@ -12,27 +12,27 @@ export class TypesRisquesComponent {
   selectedTab = 0;
   tabs = [
     {
-      label: 'Inondations',
-      image: 'assets/images/svg/inondations.svg',
-      content: 'Une inondation est une submersion temporaire de zones habituellement hors d’eau suite à des précipitations soutenues.',
-      content1 : 'Le département de l’Hérault est particulièrement exposé aux épisodes méditerranéens communément appelés épisodes cévenols. Ils sont liés à des remontées d’air chaud et humide en provenance de la Méditerranée, susceptibles de produire des orages violents et de fortes pluies.',
+      label: 'Feu de forêt',
+      image: 'assets/images/jpg/feux_foret.png',
+      content: "C'est un incendie qui atteint des bois, forêts, landes, garrigues, maquis et reboisements. C’est un feu qui impacte un massif dont la surface, d’un seul tenant, est supérieure à 0,5 ha, quelle que soit la superficie de forêt brûlée.",
+      content1 : '',
     },
     {
-      label: 'Débordement',
-      image: 'assets/images/jpg/crue_compress.jpg',
-      content: 'Le cours d’eau sort de son lit et vient inonder les lieux environnants de façon plus ou moins rapide. Le niveau du cours d’eau peut monter de plusieurs mètres en moins de 2 heures.',
-      content1: 'Le débit est alors si puissant que 30 cm d’eau peuvent suffire pour emporter une voiture ! Parfois la décrue peut-être particulièrement longue et impacter le quotidien (coupure des routes, des réseaux électriques, du téléphone, etc.).',
+      label: "Aggravation",
+      image: 'assets/images/jpg/feux1.jpg',
+      content: 'L’augmentation des surfaces en bois et landes et de leur biomasse, l’extension des zones urbanisées au contact des zones naturelles boisées, combinées au réchauffement climatique, conduisent à une aggravation du risque incendie de forêt.',
+      content1: '',
     },
     {
-      label: 'Rupture d’ouvrage',
-      image: 'assets/images/jpg/Barrage_du_Salagou_compress.jpg',
-      content: 'Des systèmes d’endiguement, des ouvrages hydrauliques ou encore des bassins de rétention sont susceptibles de connaître des défaillances (surverses, ruptures) dans certaines situations extrêmes.',
-      content1: 'Par exemple si l’événement dépasse le niveau de protection pour lequel ils ont été conçus.',
+      label: 'Exposition',
+      image: 'assets/images/jpg/feux2.jpg',
+      content: 'Parmi les départements de la région Occitanie, l’Hérault est le plus exposé aux feux de forêt. Les zones les plus critiques correspondent aux forêts de pins d’Alep et aux garrigues, qui s’étendent du Minervois au Lunellois.',
+      content1: 'C’est également le secteur où se développe principalement l’urbanisation, avec d’importantes interfaces forêt – habitat.',
     },
     {
-      label: 'Ruissellement',
-      image: 'assets/images/jpg/ruisselement-compress.jpg',
-      content: 'L’imperméabilisation des sols, due à l’urbanisation croissante et à certaines pratiques agricoles, empêche l’eau de s’infiltrer correctement dans le sol.',
+      label: 'Témoignage',
+      image: 'assets/images/jpg/feux3.jpg',
+      content: '"Tout est brûlé à moins de 80 mètres de mon jardin et ma maison a été sauvée..." (Une habitante d’Aumelas, juillet 2022, Midi Libre)',
       content1: 'Les réseaux d’évacuation d’eaux pluviales sont alors rapidement saturés, les eaux de pluie empruntent les rues et forment des courants parfois dangereux avec des vitesses importantes combinées à des hauteurs d’eau variables.'
     }
   ];

@@ -40,7 +40,7 @@ export class SituationComponent {
     this.http.get('assets/cartes/json/departement-34-herault.geojson').subscribe((geojson: any) => {
       L.geoJSON(geojson, {
         style: {
-          color: '#5499c7',
+          color: '#22c55e',
           weight: 2,
           fillOpacity: 0
         }
@@ -50,17 +50,17 @@ export class SituationComponent {
 
   private addMarker(): void {
     const customIcon = L.icon({
-      iconUrl: 'assets/images/svg/marker_inondations.svg',
+      iconUrl: 'assets/images/svg/feux_map.svg',
       iconSize: [30, 30],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34]
     });
 
     const villes: { nom: string; degats: string; couts: string; date: string; coords: [number, number] }[] = [
-      { nom: 'Grabels', degats:'570 foyers touchés', couts:'1M€ de dégâts', date:'6 octobre 2014', coords: [43.6397, 3.7993] },
-      { nom: 'Béziers', degats:'', couts:'3M€ de dégâts', date:'22 octobre 2019', coords: [43.3444, 3.2474] },
-      { nom: 'Lamalou-les-Bains', degats:'4 décès', couts:'12M€ de dégâts', date:'16 août 2014', coords: [43.5976, 3.0823] },
-      { nom: "Cazouls-d'Hérault", degats:'1 décès', couts:'', date:'22 octobre 2019', coords: [43.5064, 3.4575] }
+      { nom: 'St-Bauzille de la Sylve', degats:'952 ha brûlés', couts:'', date:'22 juillet 2022', coords: [43.618, 3.546] },
+      { nom: 'Fabrègues', degats:'400 ha brûlés', couts:'', date:'5 juillet 2025', coords: [43.551, 3.777] },
+      { nom: 'Minerve', degats:'80 ha brûlés', couts:'', date:'15 septembre 2024', coords: [43.355, 2.744] },
+      { nom: "Villeveyrac", degats:'200 ha brûlés', couts:'', date:'5 septembre 2023', coords: [43.501, 3.607] }
     ];
 
     let grabelsMarker: L.Marker | null = null; // <-- déclaration unique ici
@@ -76,7 +76,7 @@ export class SituationComponent {
         .addTo(this.map)
         .bindPopup(popupContent);
 
-      if (ville.nom === 'Grabels') {
+      if (ville.nom === 'St-Bauzille de la Sylve') {
         grabelsMarker = marker;
       }
     });
