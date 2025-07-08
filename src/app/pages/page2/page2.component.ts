@@ -19,7 +19,7 @@ export class Page2Component {
 
   cards = [
     "Vidéo",
-    "Types d'inondations",
+    "Informations",
     "Situation",
     "Conséquences",
     "Actions préventives"
