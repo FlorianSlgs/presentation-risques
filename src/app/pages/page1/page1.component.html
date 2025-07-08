@@ -57,6 +57,12 @@
 
     <div
       class="flex flex-col justify-center items-center w-full"
+      *ngIf="cards[current] === 'Situation'">
+      <app-situation></app-situation>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-center w-full"
       *ngIf="cards[current] === 'Conséquences'">
       <app-consequences></app-consequences>
     </div>
