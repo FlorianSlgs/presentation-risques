@@ -21,7 +21,7 @@ export class Page2Component {
     "Informations",
     "Situation",
     "Conséquences",
-    "Actions préventives"
+    "Action préventive"
   ];
   current = 0;
 
