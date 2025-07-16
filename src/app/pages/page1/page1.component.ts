@@ -23,7 +23,6 @@ cards = [
   "Types d'inondations",
   "Situation",
   "Conséquences",
-  "Situation",
   "Actions préventives"
 ];
 current = 0;
