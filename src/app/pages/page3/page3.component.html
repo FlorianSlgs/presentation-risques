@@ -1,1 +1,73 @@
-<p>page3 works!</p>
+<section class="min-h-screen w-full flex flex-col items-center justify-start bg-gradient-to-br from-orange-400 to-orange-500 text-white relative">
+
+  <!-- Titre en haut à gauche avec ligne et logo -->
+  <div class="mt-4 flex items-center w-full pr-6 max-w-none">
+    <span class="text-xl sm:text-2xl font-bold whitespace-nowrap ml-6">LE RISQUE MOUVEMENT DE TERRAIN</span>
+    <img src="assets/images/svg/mvt-terrain.svg" alt="Logo" class="w-11 h-11 ml-3" />
+    <span class="h-px bg-white opacity-60 ml-4 flex-1 hidden sm:block"></span>
+  </div>
+
+  <!-- Carousel 3D -->
+    <div
+      class="relative w-full flex justify-center items-center"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+    >
+    <!-- Bouton précédent - positionné à gauche de la carte centrale -->
+    <button (click)="prev()" class="absolute backdrop-blur left-1/2 transform -translate-x-[155px] z-20 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20 shadow-xl transition">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="orange" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+    </button>
+    
+    <div class="flex items-center justify-center w-[700px] h-30 perspective-[1200px]">
+        <ng-container *ngFor="let card of cards; let i = index">
+            <div
+                *ngIf="isVisible(i)"
+                [ngClass]="getCardClass(i)"
+                class="absolute transition-all duration-500 ease-in-out w-64 h-20 bg-white bg-opacity-90 text-orange-900 shadow-xl flex items-center justify-center text-xl font-bold select-none"
+            >
+                {{ card }}
+            </div>
+            </ng-container>
+    </div>
+    
+    <!-- Bouton suivant - positionné à droite de la carte centrale -->
+    <button (click)="next()" class="absolute backdrop-blur right-1/2 transform translate-x-[155px] z-20 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20 shadow-xl transition">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="orange" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
+
+    </div>
+
+    <!-- Contenu dynamique centré verticalement -->
+  <div class="flex-1 w-full flex flex-col">
+
+    <div
+      class="flex flex-col justify-center items-center w-full"
+      *ngIf="cards[current] === 'Informations'">
+      <app-types-risques-mouvement></app-types-risques-mouvement>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-center w-full"
+      *ngIf="cards[current] === 'Situation'">
+      <app-situation-mouvement></app-situation-mouvement>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-center w-full"
+      *ngIf="cards[current] === 'Conséquences'">
+      <app-consequences-mouvement></app-consequences-mouvement>
+    </div>
+
+    <div
+      class="flex flex-col justify-center items-center w-full"
+      *ngIf="cards[current] === 'Action préventive'">
+      <app-actions-prevention-mouvement></app-actions-prevention-mouvement>
+    </div>
+
+  </div>
+
+</section>
