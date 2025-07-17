@@ -19,7 +19,7 @@ export class Page3Component {
     "Informations",
     "Situation",
     "Conséquences",
-    "Action préventive"
+    "Actions préventives"
   ];
   current = 0;
 
