@@ -40,7 +40,7 @@ export class SituationMouvementComponent implements OnInit, AfterViewInit {
     this.http.get('assets/cartes/json/departement-34-herault.geojson').subscribe((geojson: any) => {
       L.geoJSON(geojson, {
         style: {
-          color: '#22c55e',
+          color: '#fb923c',
           weight: 2,
           fillOpacity: 0
         }
@@ -50,17 +50,16 @@ export class SituationMouvementComponent implements OnInit, AfterViewInit {
 
   private addMarker(): void {
     const customIcon = L.icon({
-      iconUrl: 'assets/images/svg/feux_map.svg',
+      iconUrl: 'assets/images/svg/mvt-terrain_map.svg',
       iconSize: [30, 30],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34]
+      iconAnchor: [15, 15],
+      popupAnchor: [0, -15]
     });
 
     const villes: { nom: string; degats: string; couts: string; date: string; coords: [number, number] }[] = [
-      { nom: 'St-Bauzille de la Sylve', degats:'952 ha brûlés', couts:'', date:'22 juillet 2022', coords: [43.618, 3.546] },
-      { nom: 'Fabrègues', degats:'400 ha brûlés', couts:'', date:'5 juillet 2025', coords: [43.551, 3.777] },
-      { nom: 'Minerve', degats:'80 ha brûlés', couts:'', date:'15 septembre 2024', coords: [43.355, 2.744] },
-      { nom: "Villeveyrac", degats:'200 ha brûlés', couts:'', date:'5 septembre 2023', coords: [43.501, 3.607] }
+      { nom: 'Cazilhac', degats:'1 décès', couts:'', date:'août 2018', coords: [43.918, 3.696] },
+      { nom: 'Laroque', degats:'chutes de blocs sur un sentier de randonnée', couts:'', date:'novembre 2008', coords: [43.923, 3.728] },
+      { nom: "Saint-Vincent-d'Olargues", degats:"rocher de quinze tonnes s'écrase sur une habitation inoccupée", couts:'', date:'avril 2007', coords: [43.562, 2.879] },
     ];
 
     let grabelsMarker: L.Marker | null = null; // <-- déclaration unique ici
@@ -76,7 +75,7 @@ export class SituationMouvementComponent implements OnInit, AfterViewInit {
         .addTo(this.map)
         .bindPopup(popupContent);
 
-      if (ville.nom === 'St-Bauzille de la Sylve') {
+      if (ville.nom === 'Cazilhac') {
         grabelsMarker = marker;
       }
     });
