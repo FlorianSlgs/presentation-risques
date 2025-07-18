@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-actions-prevention-feux',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './actions-prevention.component.html',
   styleUrls: ['./actions-prevention.component.scss']
 })

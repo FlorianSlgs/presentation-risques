@@ -1,11 +1,3 @@
-// Styles pour les animations personnalisées
-.card-item {
-  // Animation de pulse subtle au hover
-  &:hover {
-    animation: subtle-pulse 0.3s ease-in-out;
-  }
-}
-
 // Animation personnalisée pour un effet de pulse léger
 @keyframes subtle-pulse {
   0% {
@@ -41,18 +33,6 @@
   }
 }
 
-// Amélioration des transitions pour les boutons
-button {
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  &:active {
-    transform: translateY(0);
-  }
-}
-
 // Style pour le dropdown avec animation
 .relative {
   .absolute {
@@ -69,4 +49,95 @@ button {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+// Styles pour la pop-up modal
+.popup-content {
+  animation: popupSlideIn 0.3s ease-out;
+  transform-origin: center;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+// Animation pour l'overlay de la pop-up
+.fixed {
+  animation: fadeIn 0.3s ease-out;
+  
+  &.bg-black\/50 {
+    backdrop-filter: blur(4px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Style responsive pour la pop-up
+@media (max-width: 640px) {
+  .popup-content {
+    margin: 1rem;
+    max-height: 85vh;
+  }
+}
+
+// Amélioration des effets hover sur les cartes
+.card-item {
+  .bg-white\/10 {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// Style pour le bouton de fermeture de la pop-up
+.popup-content {
+  button {
+    &:hover {
+      svg {
+        transform: scale(1.1);
+        transition: transform 0.2s ease;
+      }
+    }
+  }
+}
+
+// Amélioration du style des boutons dans la pop-up
+.popup-content {
+  .bg-blue-600 {
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+    
+    &:hover {
+      box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+:host {
+  position: relative;
+  z-index: 1;
+}
+
+.popup-modal {
+  z-index: 9999 !important;
+  position: fixed !important;
 }

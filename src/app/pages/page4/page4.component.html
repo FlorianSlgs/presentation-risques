@@ -7,8 +7,8 @@
 
   <!-- Boutons en haut pour écrans md et plus -->
   <div class="mt-6 hidden md:flex gap-4 justify-center w-full px-6">
-    <button (click)="onInformationsClick()" 
-            class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
+    <button (click)="onInondationsClick()" 
+            class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-white hover:text-blue-600 transition-all duration-300 transform"
             [class.bg-white]="selectedCategory === 'inondation'"
             [class.text-blue-600]="selectedCategory === 'inondation'"
             [class.shadow-lg]="selectedCategory === 'inondation'">
@@ -16,8 +16,8 @@
       <span class="font-bold">Inondation</span>
     </button>
     
-    <button (click)="onUrgenceClick()" 
-            class="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105"
+    <button (click)="onFeuxClick()" 
+            class="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-white hover:text-green-600 transition-all duration-300 transform"
             [class.bg-white]="selectedCategory === 'feu'"
             [class.text-green-600]="selectedCategory === 'feu'"
             [class.shadow-lg]="selectedCategory === 'feu'">
@@ -25,8 +25,8 @@
       <span class="font-bold">Feu de forêt</span>
     </button>
     
-    <button (click)="onContactClick()" 
-            class="flex items-center gap-2 px-4 py-2 bg-orange-500 hover:bg-white hover:text-orange-500 transition-all duration-300 transform hover:scale-105"
+    <button (click)="onTerrainClick()" 
+            class="flex items-center gap-2 px-4 py-2 bg-orange-500 hover:bg-white hover:text-orange-500 transition-all duration-300 transform"
             [class.bg-white]="selectedCategory === 'terrain'"
             [class.text-orange-500]="selectedCategory === 'terrain'"
             [class.shadow-lg]="selectedCategory === 'terrain'">
@@ -83,7 +83,7 @@
 
   <!-- Zone d'affichage des images avec animations -->
   @if (displayedImages.length > 0) {
-    <div class="mt-8 w-full max-w-6xl px-6" [@cardsAnimation]>
+    <div class="mt-8 w-full max-w-6xl px-6">
       <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         @for (image of displayedImages; track image.src) {
           <div class="flex flex-col items-center card-item">

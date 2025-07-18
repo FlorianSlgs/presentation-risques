@@ -1,9 +1,9 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-video-feux',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './video.component.html',
   styleUrl: './video.component.scss'
 })

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-ppri',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './ppri.component.html',
   styleUrl: './ppri.component.scss'
 })

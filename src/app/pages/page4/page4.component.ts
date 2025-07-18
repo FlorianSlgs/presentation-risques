@@ -1,5 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import { trigger, transition, style, animate, stagger, query } from '@angular/animations';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 interface ImageItem {
   src: string;
@@ -11,35 +10,8 @@ interface ImageItem {
   imports: [],
   templateUrl: './page4.component.html',
   styleUrl: './page4.component.scss',
-  animations: [
-    // Animation pour l'apparition des cartes d'images
-    trigger('cardsAnimation', [
-      transition(':enter', [
-        query('.card-item', [
-          style({ opacity: 0, transform: 'translateY(30px) scale(0.9)' }),
-          stagger(100, [
-            animate('0.5s cubic-bezier(0.35, 0, 0.25, 1)', 
-              style({ opacity: 1, transform: 'translateY(0) scale(1)' }))
-          ])
-        ], { optional: true })
-      ])
-    ]),
-    
-    // Animation pour le changement de couleur de fond
-    trigger('backgroundColorChange', [
-      transition('* => inondation', [
-        animate('0.6s ease-in-out')
-      ]),
-      transition('* => feu', [
-        animate('0.6s ease-in-out')
-      ]),
-      transition('* => terrain', [
-        animate('0.6s ease-in-out')
-      ])
-    ])
-  ]
 })
-export class Page4Component {
+export class Page4Component implements OnInit {
   selectedCategory: string = '';
   displayedImages: ImageItem[] = [];
   isDropdownOpen: boolean = false;
@@ -50,15 +22,15 @@ export class Page4Component {
   private imageData: { [key: string]: ImageItem[] } = {
     inondation: [
       { src: 'assets/images/svg/contact.svg', title: "Rester en contact" },
-      { src: 'assets/images/svg/abrite.svg', title: "Rester abrité" },
-      { src: 'assets/images/svg/ascenseur.svg', title: "Pas prendre l'ascenseur" },
+      { src: 'assets/images/svg/ascenseur.svg', title: "Na pas prendre l'ascenseur" },
       { src: 'assets/images/svg/reseaux.svg', title: "Couper les réseaux" },
+      { src: 'assets/images/svg/abrite.svg', title: "Rester abrité" },
       { src: 'assets/images/svg/monter.svg', title: "Monter à l'étage" },
       { src: 'assets/images/svg/eloigner.svg', title: "S'éloigner des cours d'eau" }
     ],
     feu: [
       { src: 'assets/images/svg/contact.svg', title: "Rester en contact" },
-      { src: 'assets/images/svg/abrite.svg', title: "Rester abrité" },
+      { src: 'assets/images/svg/abrite_feux.svg', title: "Rester abrité" },
       { src: 'assets/images/svg/poumons.svg', title: "Protéger ses poumons" },
       { src: 'assets/images/svg/ascenseur.svg', title: "Ne pas prendre l'ascenseur" }
     ],
@@ -81,6 +53,11 @@ export class Page4Component {
     terrain: 'assets/images/svg/mvt_react.svg'
   };
 
+  // Initialisation automatique avec inondation
+  ngOnInit() {
+    this.updateCategory('inondation');
+  }
+
   // Fermer le dropdown quand on clique ailleurs
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
@@ -91,18 +68,15 @@ export class Page4Component {
     }
   }
 
-  onInformationsClick() {
-    console.log('Bouton Informations cliqué');
+  onInondationsClick() {
     this.updateCategory('inondation');
   }
 
-  onUrgenceClick() {
-    console.log('Bouton Urgence cliqué');
+  onFeuxClick() {
     this.updateCategory('feu');
   }
 
-  onContactClick() {
-    console.log('Bouton Contact cliqué');
+  onTerrainClick() {
     this.updateCategory('terrain');
   }
 
@@ -130,19 +104,18 @@ export class Page4Component {
     return this.categorySvgs[category] || '';
   }
 
-  // Méthode pour obtenir les classes CSS du fond selon la catégorie
   getBackgroundClasses(): string {
-    const baseClasses = 'min-h-screen w-full flex flex-col items-center justify-start text-white relative transition-all duration-700 ease-in-out';
+    const baseClasses = 'min-h-screen w-full flex flex-col items-center justify-start text-white relative';
     
     switch(this.selectedCategory) {
       case 'inondation':
-        return `${baseClasses} bg-gradient-to-br from-blue-600 to-blue-800`;
+        return `${baseClasses} bg-gradient-to-br from-blue-600 to-blue-800 transition-all duration-700 ease-in-out`;
       case 'feu':
-        return `${baseClasses} bg-gradient-to-br from-red-600 to-orange-700`;
+        return `${baseClasses} bg-gradient-to-br from-green-600 to-green-800 transition-all duration-700 ease-in-out`;
       case 'terrain':
-        return `${baseClasses} bg-gradient-to-br from-amber-600 to-orange-600`;
+        return `${baseClasses} bg-gradient-to-br from-amber-600 to-orange-600 transition-all duration-700 ease-in-out`;
       default:
-        return `${baseClasses} bg-gradient-to-br from-blue-600 to-[#126091]`;
+        return `${baseClasses} bg-gradient-to-br from-blue-600 to-[#126091] transition-all duration-700 ease-in-out`;
     }
   }
 }

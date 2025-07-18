@@ -1,170 +1,173 @@
 <div class="relative w-full max-w-4xl mx-auto p-4 consequences-container" (click)="stopPropagation($event)">
   <!-- Image ronde en arrière-plan -->
   <div class="relative">
-    <img 
-      src="assets/images/jpg/mvt-de-terrain_1.webp" 
-      alt="Vue aérienne d'une inondation" 
+    <img
+      src="assets/images/jpg/mvt-de-terrain_1.webp"
+      alt="Vue aérienne d'une inondation"
       class="w-96 h-96 object-cover rounded-full shadow-2xl mx-auto"
-    />
-    
-    <!-- Version desktop (md et plus) -->
-    <div class="hidden md:block">
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="grid grid-cols-3 gap-4 w-[170%] -mx-40 max-w-none px-8 items-start">
-          
-          <!-- Colonne 1 - Gauche -->
-          <div class="bg-orange-800 bg-opacity-90 text-white p-4 shadow-lg relative">
+      />
+
+      <!-- Version desktop (md et plus) -->
+      <div class="hidden md:block">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="grid grid-cols-3 gap-4 w-[170%] -mx-40 max-w-none px-8 items-start">
+
+            <!-- Colonne 1 - Gauche -->
+            <div class="bg-orange-800 bg-opacity-90 text-white p-4 shadow-lg relative">
               <!-- Bandeau blanc en haut -->
               <div class="absolute left-0 top-0 w-full h-10 bg-white flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 text-orange-800">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 text-orange-800">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
               </div>
               <!-- Ajoute un padding-top pour ne pas masquer le texte -->
               <div class="pt-10">
-                  <p class="text-sm leading-tight">
+                <p class="text-sm leading-tight">
                   Les grands mouvements de terrain étant souvent peu rapides, les victimes sont, fort heureusement, peu nombreuses.
-                  </p>
-                  <p class="text-sm leading-tight mt-2">
+                </p>
+                <p class="text-sm leading-tight mt-2">
                   En revanche, lorsqu’ils sont rapides et discontinus, par leur caractère soudain, ils augmentent la vulnérabilité des personnes.
-                  </p>
+                </p>
               </div>
-          </div>
+            </div>
 
-          <!-- Colonne 2 - Centre -->
-           <div class="bg-orange-800 bg-opacity-90 text-white p-4 shadow-lg relative top-25">
+            <!-- Colonne 2 - Centre -->
+            <div class="bg-orange-800 bg-opacity-90 text-white p-4 shadow-lg relative top-25">
               <!-- Bandeau blanc en haut -->
               <div class="absolute left-0 top-0 w-full h-10 bg-white flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-orange-800">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-orange-800">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
               </div>
               <!-- Ajoute un padding-top pour ne pas masquer le texte -->
               <div class="pt-10">
-                  <p class="text-sm leading-tight">
-                  Les dommages aux biens sont considérables et souvent irréversibles (fissuration de  bâtiments pouvant nécessiter leur démolition). 
-                  </p>
+                <p class="text-sm leading-tight">
+                  Les dommages aux biens sont considérables et souvent irréversibles (fissuration de  bâtiments pouvant nécessiter leur démolition).
+                </p>
               </div>
-          </div>
+            </div>
 
-          <!-- Colonne 3 - Droite -->
-          <div class="bg-orange-800 bg-opacity-90 text-white p-4 shadow-lg relative">
+            <!-- Colonne 3 - Droite -->
+            <div class="bg-orange-800 bg-opacity-90 text-white p-4 shadow-lg relative">
               <!-- Bandeau blanc en haut -->
               <div class="absolute left-0 top-0 w-full h-10 bg-white flex items-center justify-center">
-                  <svg class="w-5 h-5 text-orange-800" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.74425 5.08775C4.74454 5.08767 4.74484 5.08759 4.74515 5.08752C4.73431 5.09125 4.73291 5.09067 4.74425 5.08775ZM5.06197 5.06197C5.30798 5.06007 5.64213 5.08354 6.05778 5.13854C7.00348 5.26366 8.24412 5.53447 9.55392 5.91339C10.8617 6.29172 12.2095 6.7695 13.3722 7.29844C14.558 7.83791 15.4624 8.3913 15.9604 8.88933C17.8533 10.7822 18.1259 13.54 16.8928 15.4786L11.7071 10.2929C11.3166 9.90235 10.6834 9.90235 10.2929 10.2929C9.90236 10.6834 9.90236 11.3166 10.2929 11.7071L15.4786 16.8928C13.54 18.1259 10.7822 17.8533 8.88933 15.9604C8.3913 15.4624 7.83791 14.558 7.29844 13.3722C6.7695 12.2095 6.29172 10.8617 5.91339 9.55392C5.53447 8.24412 5.26366 7.00348 5.13854 6.05778C5.08354 5.64213 5.06007 5.30798 5.06197 5.06197ZM16.9179 18.3321C14.1204 20.3974 10.0823 19.9818 7.47512 17.3746C6.71789 16.6174 6.04514 15.4471 5.47798 14.2004C4.90031 12.9307 4.391 11.4883 3.99218 10.1097C3.59395 8.73319 3.29755 7.39136 3.15582 6.32011C3.08547 5.78846 3.04874 5.29093 3.0662 4.87521C3.07489 4.66821 3.09809 4.4503 3.15117 4.24459C3.19961 4.05683 3.2995 3.77154 3.53552 3.53552C3.77154 3.2995 4.05683 3.19961 4.24459 3.15117C4.4503 3.09809 4.66821 3.07489 4.87521 3.0662C5.29093 3.04874 5.78846 3.08547 6.32011 3.15582C7.39136 3.29755 8.73319 3.59395 10.1097 3.99218C11.4883 4.391 12.9307 4.90031 14.2004 5.47798C15.4471 6.04514 16.6174 6.71789 17.3746 7.47512C19.9818 10.0823 20.3974 14.1204 18.3321 16.9179L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3166 21.0976 19.6834 21.0976 19.2929 20.7071L16.9179 18.3321ZM5.08752 4.74516C5.08759 4.74484 5.08767 4.74454 5.08775 4.74425C5.09067 4.73291 5.09125 4.73431 5.08752 4.74516Z"/>
-                  </svg>
+                <svg class="w-5 h-5 text-orange-800" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.74425 5.08775C4.74454 5.08767 4.74484 5.08759 4.74515 5.08752C4.73431 5.09125 4.73291 5.09067 4.74425 5.08775ZM5.06197 5.06197C5.30798 5.06007 5.64213 5.08354 6.05778 5.13854C7.00348 5.26366 8.24412 5.53447 9.55392 5.91339C10.8617 6.29172 12.2095 6.7695 13.3722 7.29844C14.558 7.83791 15.4624 8.3913 15.9604 8.88933C17.8533 10.7822 18.1259 13.54 16.8928 15.4786L11.7071 10.2929C11.3166 9.90235 10.6834 9.90235 10.2929 10.2929C9.90236 10.6834 9.90236 11.3166 10.2929 11.7071L15.4786 16.8928C13.54 18.1259 10.7822 17.8533 8.88933 15.9604C8.3913 15.4624 7.83791 14.558 7.29844 13.3722C6.7695 12.2095 6.29172 10.8617 5.91339 9.55392C5.53447 8.24412 5.26366 7.00348 5.13854 6.05778C5.08354 5.64213 5.06007 5.30798 5.06197 5.06197ZM16.9179 18.3321C14.1204 20.3974 10.0823 19.9818 7.47512 17.3746C6.71789 16.6174 6.04514 15.4471 5.47798 14.2004C4.90031 12.9307 4.391 11.4883 3.99218 10.1097C3.59395 8.73319 3.29755 7.39136 3.15582 6.32011C3.08547 5.78846 3.04874 5.29093 3.0662 4.87521C3.07489 4.66821 3.09809 4.4503 3.15117 4.24459C3.19961 4.05683 3.2995 3.77154 3.53552 3.53552C3.77154 3.2995 4.05683 3.19961 4.24459 3.15117C4.4503 3.09809 4.66821 3.07489 4.87521 3.0662C5.29093 3.04874 5.78846 3.08547 6.32011 3.15582C7.39136 3.29755 8.73319 3.59395 10.1097 3.99218C11.4883 4.391 12.9307 4.90031 14.2004 5.47798C15.4471 6.04514 16.6174 6.71789 17.3746 7.47512C19.9818 10.0823 20.3974 14.1204 18.3321 16.9179L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3166 21.0976 19.6834 21.0976 19.2929 20.7071L16.9179 18.3321ZM5.08752 4.74516C5.08759 4.74484 5.08767 4.74454 5.08775 4.74425C5.09067 4.73291 5.09125 4.73431 5.08752 4.74516Z"/>
+                </svg>
               </div>
               <!-- Ajoute un padding-top pour ne pas masquer le texte -->
               <div class="pt-10">
-                  <p class="text-sm leading-tight">
-                  Dans certains cas extrêmes, les mouvements de terrain peuvent entraîner des pollutions induites lorsqu’ils concernent une usine chimique, une station d’épuration... 
-                  </p>
-                  <p class="text-sm leading-tight mt-2">
+                <p class="text-sm leading-tight">
+                  Dans certains cas extrêmes, les mouvements de terrain peuvent entraîner des pollutions induites lorsqu’ils concernent une usine chimique, une station d’épuration...
+                </p>
+                <p class="text-sm leading-tight mt-2">
                   Les éboulements en grande masse peuvent entraîner un remodelage des paysages.
-                  </p>
+                </p>
               </div>
-          </div>
+            </div>
 
+          </div>
         </div>
       </div>
-    </div>
-    
-    <!-- Version mobile (en dessous de md) -->
-    <div class="md:hidden">
-      <!-- Boutons rectangulaires empilés en haut de l'image -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          <!-- Bouton 1 -->
-          <button 
-            (click)="togglePanel(1); stopPropagation($event)"
-            class="border-2 border-orange-800 p-3 shadow-lg transition-colors flex items-center justify-center"
-            [class.bg-orange-800]="isPanelOpen(1)"
-            [class.bg-white]="!isPanelOpen(1)"
-            [class.hover:bg-orange-50]="!isPanelOpen(1)"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" 
-                 class="w-6 h-6"
-                 [class.text-white]="isPanelOpen(1)"
-                 [class.text-orange-800]="!isPanelOpen(1)">
+
+      <!-- Version mobile (en dessous de md) -->
+      <div class="md:hidden">
+        <!-- Boutons rectangulaires empilés en haut de l'image -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="absolute top-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <!-- Bouton 1 -->
+            <button
+              (click)="togglePanel(1); stopPropagation($event)"
+              class="border-2 border-orange-800 p-3 shadow-lg transition-colors flex items-center justify-center"
+              [class.bg-orange-800]="isPanelOpen(1)"
+              [class.bg-white]="!isPanelOpen(1)"
+              [class.hover:bg-orange-50]="!isPanelOpen(1)"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5"
+                class="w-6 h-6"
+                [class.text-white]="isPanelOpen(1)"
+                [class.text-orange-800]="!isPanelOpen(1)">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-            </svg>
-          </button>
-          
-          <!-- Bouton 2 -->
-          <button 
-            (click)="togglePanel(2); stopPropagation($event)"
-            class="border-2 border-orange-800 p-3 shadow-lg transition-colors flex items-center justify-center"
-            [class.bg-orange-800]="isPanelOpen(2)"
-            [class.bg-white]="!isPanelOpen(2)"
-            [class.hover:bg-orange-50]="!isPanelOpen(2)"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
-                 class="w-6 h-6"
-                 [class.text-white]="isPanelOpen(2)"
-                 [class.text-orange-800]="!isPanelOpen(2)">
+              </svg>
+            </button>
+
+            <!-- Bouton 2 -->
+            <button
+              (click)="togglePanel(2); stopPropagation($event)"
+              class="border-2 border-orange-800 p-3 shadow-lg transition-colors flex items-center justify-center"
+              [class.bg-orange-800]="isPanelOpen(2)"
+              [class.bg-white]="!isPanelOpen(2)"
+              [class.hover:bg-orange-50]="!isPanelOpen(2)"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="w-6 h-6"
+                [class.text-white]="isPanelOpen(2)"
+                [class.text-orange-800]="!isPanelOpen(2)">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-          </button>
-          
-          <!-- Bouton 3 -->
-          <button 
-            (click)="togglePanel(3); stopPropagation($event)"
-            class="border-2 border-orange-800 p-3 shadow-lg transition-colors flex items-center justify-center"
-            [class.bg-orange-800]="isPanelOpen(3)"
-            [class.bg-white]="!isPanelOpen(3)"
-            [class.hover:bg-orange-50]="!isPanelOpen(3)"
-          >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                 [class.text-white]="isPanelOpen(3)"
-                 [class.text-orange-800]="!isPanelOpen(3)">
+              </svg>
+            </button>
+
+            <!-- Bouton 3 -->
+            <button
+              (click)="togglePanel(3); stopPropagation($event)"
+              class="border-2 border-orange-800 p-3 shadow-lg transition-colors flex items-center justify-center"
+              [class.bg-orange-800]="isPanelOpen(3)"
+              [class.bg-white]="!isPanelOpen(3)"
+              [class.hover:bg-orange-50]="!isPanelOpen(3)"
+              >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                [class.text-white]="isPanelOpen(3)"
+                [class.text-orange-800]="!isPanelOpen(3)">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.74425 5.08775C4.74454 5.08767 4.74484 5.08759 4.74515 5.08752C4.73431 5.09125 4.73291 5.09067 4.74425 5.08775ZM5.06197 5.06197C5.30798 5.06007 5.64213 5.08354 6.05778 5.13854C7.00348 5.26366 8.24412 5.53447 9.55392 5.91339C10.8617 6.29172 12.2095 6.7695 13.3722 7.29844C14.558 7.83791 15.4624 8.3913 15.9604 8.88933C17.8533 10.7822 18.1259 13.54 16.8928 15.4786L11.7071 10.2929C11.3166 9.90235 10.6834 9.90235 10.2929 10.2929C9.90236 10.6834 9.90236 11.3166 10.2929 11.7071L15.4786 16.8928C13.54 18.1259 10.7822 17.8533 8.88933 15.9604C8.3913 15.4624 7.83791 14.558 7.29844 13.3722C6.7695 12.2095 6.29172 10.8617 5.91339 9.55392C5.53447 8.24412 5.26366 7.00348 5.13854 6.05778C5.08354 5.64213 5.06007 5.30798 5.06197 5.06197ZM16.9179 18.3321C14.1204 20.3974 10.0823 19.9818 7.47512 17.3746C6.71789 16.6174 6.04514 15.4471 5.47798 14.2004C4.90031 12.9307 4.391 11.4883 3.99218 10.1097C3.59395 8.73319 3.29755 7.39136 3.15582 6.32011C3.08547 5.78846 3.04874 5.29093 3.0662 4.87521C3.07489 4.66821 3.09809 4.4503 3.15117 4.24459C3.19961 4.05683 3.2995 3.77154 3.53552 3.53552C3.77154 3.2995 4.05683 3.19961 4.24459 3.15117C4.4503 3.09809 4.66821 3.07489 4.87521 3.0662C5.29093 3.04874 5.78846 3.08547 6.32011 3.15582C7.39136 3.29755 8.73319 3.59395 10.1097 3.99218C11.4883 4.391 12.9307 4.90031 14.2004 5.47798C15.4471 6.04514 16.6174 6.71789 17.3746 7.47512C19.9818 10.0823 20.3974 14.1204 18.3321 16.9179L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3166 21.0976 19.6834 21.0976 19.2929 20.7071L16.9179 18.3321ZM5.08752 4.74516C5.08759 4.74484 5.08767 4.74454 5.08775 4.74425C5.09067 4.73291 5.09125 4.73431 5.08752 4.74516Z"/>
-            </svg>
-          </button>
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-      
-      <!-- Panneau affiché sur l'image -->
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <!-- Panneau 1 -->
-        <div 
-          *ngIf="isPanelOpen(1)" 
-          class="bg-orange-800 bg-opacity-95 text-white p-4 shadow-lg transform transition-all duration-300 ease-in-out max-w-xs mx-4 pointer-events-auto"
-          (click)="stopPropagation($event)"
-        >
-          <p class="leading-tight">
-            Les grands mouvements de terrain étant souvent peu rapides, les victimes sont, fort heureusement, peu nombreuses.
-          </p>
-          <p class="leading-tight mt-2">
-            En revanche, lorsqu’ils sont rapides et discontinus, par leur caractère soudain, ils augmentent la vulnérabilité des personnes.
-          </p>
-        </div>
-        
-        <!-- Panneau 2 -->
-        <div 
-          *ngIf="isPanelOpen(2)" 
-          class="bg-orange-800 bg-opacity-95 text-white p-4 shadow-lg transform transition-all duration-300 ease-in-out max-w-xs mx-4 pointer-events-auto"
-          (click)="stopPropagation($event)"
-        >
-          <p class="leading-tight">
-            Les dommages aux biens sont considérables et souvent irréversibles (fissuration de  bâtiments pouvant nécessiter leur démolition). 
-          </p>
-        </div>
-        
-        <!-- Panneau 3 -->
-        <div 
-          *ngIf="isPanelOpen(3)" 
-          class="bg-orange-800 bg-opacity-95 text-white p-4 shadow-lg transform transition-all duration-300 ease-in-out max-w-xs mx-4 pointer-events-auto"
-          (click)="stopPropagation($event)"
-        >
-          <p class="leading-tight">
-            Dans certains cas extrêmes, les mouvements de terrain peuvent entraîner des pollutions induites lorsqu’ils concernent une usine chimique, une station d’épuration... 
-          </p>
-          <p class="leading-tight mt-2">
-            Les éboulements en grande masse peuvent entraîner un remodelage des paysages.
-          </p>
+
+        <!-- Panneau affiché sur l'image -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <!-- Panneau 1 -->
+          @if (isPanelOpen(1)) {
+            <div
+              class="bg-orange-800 bg-opacity-95 text-white p-4 shadow-lg transform transition-all duration-300 ease-in-out max-w-xs mx-4 pointer-events-auto"
+              (click)="stopPropagation($event)"
+              >
+              <p class="leading-tight">
+                Les grands mouvements de terrain étant souvent peu rapides, les victimes sont, fort heureusement, peu nombreuses.
+              </p>
+              <p class="leading-tight mt-2">
+                En revanche, lorsqu’ils sont rapides et discontinus, par leur caractère soudain, ils augmentent la vulnérabilité des personnes.
+              </p>
+            </div>
+          }
+
+          <!-- Panneau 2 -->
+          @if (isPanelOpen(2)) {
+            <div
+              class="bg-orange-800 bg-opacity-95 text-white p-4 shadow-lg transform transition-all duration-300 ease-in-out max-w-xs mx-4 pointer-events-auto"
+              (click)="stopPropagation($event)"
+              >
+              <p class="leading-tight">
+                Les dommages aux biens sont considérables et souvent irréversibles (fissuration de  bâtiments pouvant nécessiter leur démolition).
+              </p>
+            </div>
+          }
+
+          <!-- Panneau 3 -->
+          @if (isPanelOpen(3)) {
+            <div
+              class="bg-orange-800 bg-opacity-95 text-white p-4 shadow-lg transform transition-all duration-300 ease-in-out max-w-xs mx-4 pointer-events-auto"
+              (click)="stopPropagation($event)"
+              >
+              <p class="leading-tight">
+                Dans certains cas extrêmes, les mouvements de terrain peuvent entraîner des pollutions induites lorsqu’ils concernent une usine chimique, une station d’épuration...
+              </p>
+              <p class="leading-tight mt-2">
+                Les éboulements en grande masse peuvent entraîner un remodelage des paysages.
+              </p>
+            </div>
+          }
         </div>
       </div>
     </div>
   </div>
-</div>

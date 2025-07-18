@@ -11,22 +11,23 @@
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen>
     </iframe>
-    <div
-      *ngIf="showOverlay"
-      class="absolute inset-0 bg-transparent z-20 cursor-pointer"
-      (click)="playVideo()"
-    ></div>
+    @if (showOverlay) {
+      <div
+        class="absolute inset-0 bg-transparent z-20 cursor-pointer"
+        (click)="playVideo()"
+      ></div>
+    }
   </div>
 
   <div class="relative mt-2">
-  <!-- Rectangle décoratif -->
-  <div class="absolute z-10 inset-0 translate-x-2 translate-y-2 bg-blue-200 opacity-30 -z-10"></div>
-  <!-- Contenu principal -->
-  <div class="bg-white z-11 bg-opacity-90 shadow-md p-4 border border-blue-200 text-blue-900 text-center relative">
-    <p>
-      Retrouvez les 3 épisodes de la série "Risque inondation" sur
-      <a href="https://dailymotion.com/playlist/x9rbvm" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900 font-semibold">
+    <!-- Rectangle décoratif -->
+    <div class="absolute z-10 inset-0 translate-x-2 translate-y-2 bg-blue-200 opacity-30 -z-10"></div>
+    <!-- Contenu principal -->
+    <div class="bg-white z-11 bg-opacity-90 shadow-md p-4 border border-blue-200 text-blue-900 text-center relative">
+      <p>
+        Retrouvez les 3 épisodes de la série "Risque inondation" sur
+        <a href="https://dailymotion.com/playlist/x9rbvm" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900 font-semibold">
         Dailymotion</a>.
-    </p>
+      </p>
+    </div>
   </div>
-</div>

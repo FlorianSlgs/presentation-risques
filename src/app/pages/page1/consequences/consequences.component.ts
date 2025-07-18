@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-consequences',
   templateUrl: './consequences.component.html',
   styleUrls: ['./consequences.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: []
 })
 export class ConsequencesComponent implements OnInit, OnDestroy {
   // État pour gérer l'ouverture/fermeture des panneaux sur mobile
