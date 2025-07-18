@@ -33,7 +33,7 @@ export class TypesRisquesFeuxComponent {
       label: 'Témoignage',
       image: 'assets/images/jpg/feux3.jpg',
       content: '"Tout est brûlé à moins de 80 mètres de mon jardin et ma maison a été sauvée..." (Une habitante d’Aumelas, juillet 2022, Midi Libre)',
-      content1: 'Les réseaux d’évacuation d’eaux pluviales sont alors rapidement saturés, les eaux de pluie empruntent les rues et forment des courants parfois dangereux avec des vitesses importantes combinées à des hauteurs d’eau variables.'
+      content1: ''
     }
   ];
 }
