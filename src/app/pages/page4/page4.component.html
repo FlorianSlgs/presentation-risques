@@ -87,10 +87,22 @@
       <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         @for (image of displayedImages; track image.src) {
           <div class="flex flex-col items-center card-item">
-            <div class="bg-white/10 backdrop-blur-sm p-4 hover:bg-white/20 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl">
-              <img [src]="image.src" [alt]="image.title" class="w-16 h-16 mx-auto mb-3 transition-transform duration-300" />
-              <h3 class="text-center text-sm font-semibold">{{ image.title }}</h3>
-            </div>
+            @if (image.link) {
+              <!-- Avec lien -->
+              <a [href]="image.link" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="bg-white/10 backdrop-blur-sm p-4 hover:bg-white/20 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl">
+                <img [src]="image.src" [alt]="image.title" class="w-16 h-16 mx-auto mb-3 transition-transform duration-300" />
+                <h3 class="text-center text-sm font-semibold">{{ image.title }}</h3>
+              </a>
+            } @else {
+              <!-- Sans lien -->
+              <div class="bg-white/10 backdrop-blur-sm p-4 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                <img [src]="image.src" [alt]="image.title" class="w-16 h-16 mx-auto mb-3 transition-transform duration-300" />
+                <h3 class="text-center text-sm font-semibold">{{ image.title }}</h3>
+              </div>
+            }
           </div>
         }
       </div>

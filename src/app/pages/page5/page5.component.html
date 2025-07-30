@@ -1,0 +1,246 @@
+<section class="min-h-screen w-full flex flex-col bg-[url('assets/images/jpg/Pont_Juvenal.jpg')] bg-cover bg-center relative">
+    <div class="mt-4 flex items-center justify-center w-full pr-6 max-w-none">
+        <span class="text-xl text-white sm:text-2xl font-bold whitespace-nowrap ml-6">KIT D'URGENCE</span>
+        <span class="text-sm text-white"> Ce kit préparé à l’avance vous permettra de rester chez vous plus sereinement dans l’attente des secours.</span>
+    </div>
+
+    <!-- Container pour l'image PNG et les zones de texte -->
+    <div class="flex-1 flex flex-col items-center justify-center p-4">
+        <div class="w-full max-w-[600px] flex flex-col items-center">
+            <!-- Image PNG avec zones cliquables en overlay -->
+            <div class="relative w-full flex justify-center">
+                <img
+                    src="assets/images/jpg/kit_secours.png"
+                    alt="Kit d'urgence"
+                    class="w-full max-w-[350px] h-auto rounded-lg shadow-lg"
+                />
+                
+                <!-- Zones cliquables transparentes en overlay -->
+                <button
+                    class="absolute top-[15%] left-[35%] w-[15%] h-[15%]"
+                    (click)="showText(1)"
+                    aria-label="Zone 1 - Trousse de premiers secours"
+                ></button>
+                
+                <button
+                    class="absolute top-[13%] left-[49%] w-[15%] h-[15%]"
+                    (click)="showText(2)"
+                    aria-label="Zone 2 - Réserve d'eau potable"
+                ></button>
+                
+                <button
+                    class="absolute top-[29%] left-[27%] w-[15%] h-[15%]"
+                    (click)="showText(3)"
+                    aria-label="Zone 3 - Lampe de poche"
+                ></button>
+                
+                <button
+                    class="absolute top-[31%] left-[43%] w-[15%] h-[15%]"
+                    (click)="showText(4)"
+                    aria-label="Zone 4 - Radio portable"
+                ></button>
+                
+                <button
+                    class="absolute top-[30%] left-[60%] w-[15%] h-[15%]"
+                    (click)="showText(5)"
+                    aria-label="Zone 5 - Médicaments"
+                ></button>
+                
+                <button
+                    class="absolute top-[50%] left-[25%] w-[15%] h-[15%]"
+                    (click)="showText(6)"
+                    aria-label="Zone 6 - Documents importants"
+                ></button>
+
+                <button
+                    class="absolute top-[50%] left-[40%] w-[13%] h-[15%]"
+                    (click)="showText(7)"
+                    aria-label="Zone 7 - Documents importants"
+                ></button>
+
+                <button
+                    class="absolute top-[50%] left-[52%] w-[13%] h-[15%]"
+                    (click)="showText(8)"
+                    aria-label="Zone 8 - Documents importants"
+                ></button>
+
+                <button
+                    class="absolute top-[50%] left-[65%] w-[12%] h-[15%]"
+                    (click)="showText(9)"
+                    aria-label="Zone 9 - Documents importants"
+                ></button>
+
+                <button
+                    class="absolute top-[69%] left-[29%] w-[15%] h-[15%]"
+                    (click)="showText(10)"
+                    aria-label="Zone 10 - Documents importants"
+                ></button>
+
+                <button
+                    class="absolute top-[66%] left-[46%] w-[15%] h-[15%]"
+                    (click)="showText(11)"
+                    aria-label="Zone 11 - Documents importants"
+                ></button>
+
+                <button
+                    class="absolute top-[67%] left-[60%] w-[15%] h-[15%]"
+                    (click)="showText(12)"
+                    aria-label="Zone 12 - Documents importants"
+                ></button>
+            </div>
+
+            <!-- Zone d'affichage du texte -->
+            <div class="mt-6 w-full max-w-[500px] text-center">
+                @if (activeZone === 1) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/radio.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p >Radio à piles (avec piles de rechange) afin de suivre les consignes des autorités.</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 2) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/medic.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p>Médicaments</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 3) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/trousse.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p >Trousse de premiers secours (alcool, pansements, compresses…)</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 4) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/chargeur.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p >Chargeur de téléphone portable</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 5) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/multi.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p > Outils de base (couteau multifonctions, ouvre-boîte...)</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 6) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/lampe.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p >Lampe de poche (avec piles de rechange), bougies, briquet ou allumettes</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 7) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/pumm.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p >Vêtements chauds et couverture de survie</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 8) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/boite.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p > Nourriture non périssable et ne nécessitant pas de cuisson (conserves, petits pots bébé…)</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 9) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/bouteilles.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p > Eau potable en quantité (6 litres par personne en bouteilles)</p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 10) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/jpg/monnaie.png"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p >Argent liquide (les distributeurs pouvant ne pas fonctionner) </p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 11) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/svg/clef.svg"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p> Double des clés de la maison et de la voiture </p>
+                        </div>
+                    </div>
+                }
+                @if (activeZone === 12) {
+                    <div class="p-2 bg-white/40 backdrop-blur-sm text-black shadow-lg">
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <img
+                                src="assets/images/jpg/docs.png"
+                                alt="Kit d'urgence"
+                                class="w-full max-w-[50px] max-h-[50px] h-auto rounded-lg"
+                            />
+                            <p >Photocopies des documents essentiels dans une pochette étanche (carte d'identité, ordonnances...)</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-6 right-6 z-50 text-sm font-medium transition-colors duration-300 text-white/80">
+        <a>Sources</a> <br>
+        <a>Mentions Légales</a>
+    </div>
+</section>

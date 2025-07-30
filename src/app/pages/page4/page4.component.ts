@@ -3,6 +3,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 interface ImageItem {
   src: string;
   title: string;
+  link?: string; // Optionnel avec ?
 }
 
 @Component({
@@ -18,26 +19,75 @@ export class Page4Component implements OnInit {
   // Variable pour gérer l'animation du fond
   backgroundState: string = 'default';
 
-  // Données des images par catégorie
+  // Données des images par catégorie avec liens externes (optionnels)
   private imageData: { [key: string]: ImageItem[] } = {
     inondation: [
-      { src: 'assets/images/svg/contact.svg', title: "Rester en contact" },
-      { src: 'assets/images/svg/ascenseur.svg', title: "Na pas prendre l'ascenseur" },
-      { src: 'assets/images/svg/reseaux.svg', title: "Couper les réseaux" },
-      { src: 'assets/images/svg/abrite.svg', title: "Rester abrité" },
-      { src: 'assets/images/svg/monter.svg', title: "Monter à l'étage" },
-      { src: 'assets/images/svg/eloigner.svg', title: "S'éloigner des cours d'eau" }
+      { 
+        src: 'assets/images/svg/contact.svg', 
+        title: "Rester en contact",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-d-inondation'
+      },
+      { 
+        src: 'assets/images/svg/ascenseur.svg', 
+        title: "Na pas prendre l'ascenseur",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-d-inondation'
+      },
+      { 
+        src: 'assets/images/svg/reseaux.svg', 
+        title: "Couper les réseaux",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-d-inondation'
+      },
+      { 
+        src: 'assets/images/svg/abrite.svg', 
+        title: "Rester abrité",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-d-inondation'
+      },
+      { 
+        src: 'assets/images/svg/monter.svg', 
+        title: "Monter à l'étage",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-d-inondation'
+      },
+      { 
+        src: 'assets/images/svg/eloigner.svg', 
+        title: "S'éloigner des cours d'eau",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-d-inondation'
+      }
     ],
     feu: [
-      { src: 'assets/images/svg/contact.svg', title: "Rester en contact" },
-      { src: 'assets/images/svg/abrite_feux.svg', title: "Rester abrité" },
-      { src: 'assets/images/svg/poumons.svg', title: "Protéger ses poumons" },
-      { src: 'assets/images/svg/ascenseur.svg', title: "Ne pas prendre l'ascenseur" }
+      { 
+        src: 'assets/images/svg/contact.svg', 
+        title: "Rester en contact",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-de-feu-de-foret'
+      },
+      { 
+        src: 'assets/images/svg/abrite_feux.svg', 
+        title: "Rester abrité",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-de-feu-de-foret'
+      },
+      { 
+        src: 'assets/images/svg/poumons.svg', 
+        title: "Protéger ses poumons",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-de-feu-de-foret'
+      },
+      { 
+        src: 'assets/images/svg/ascenseur.svg', 
+        title: "Ne pas prendre l'ascenseur",
+        link: 'https://www.georisques.gouv.fr/me-preparer-me-proteger/que-faire-en-cas-de-feu-de-foret'
+      }
     ],
     terrain: [
-      { src: 'assets/images/svg/contact.svg', title: "Rester en contact" },
-      { src: 'assets/images/svg/zone.svg', title: "S'éloigner de la zone dangereuse" },
-      { src: 'assets/images/svg/ascenseur.svg', title: "Ne pas prendre l'ascenseur" },
+      { 
+        src: 'assets/images/svg/contact.svg', 
+        title: "Rester en contact"
+      },
+      { 
+        src: 'assets/images/svg/zone.svg', 
+        title: "S'éloigner de la zone dangereuse"
+      },
+      { 
+        src: 'assets/images/svg/ascenseur.svg', 
+        title: "Ne pas prendre l'ascenseur"
+      },
     ]
   };
 
@@ -89,6 +139,8 @@ export class Page4Component implements OnInit {
     this.isDropdownOpen = false;
     console.log(`Catégorie sélectionnée: ${category}`);
   }
+
+
 
   private updateCategory(category: string) {
     this.selectedCategory = category;
