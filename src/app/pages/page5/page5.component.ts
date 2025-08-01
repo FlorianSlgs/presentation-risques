@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './page5.component.scss'
 })
 export class Page5Component {
-  activeZone: number | null = null;
+  activeZone: number | null = 1;
 
   showText(zone: number) {
     this.activeZone = zone;
