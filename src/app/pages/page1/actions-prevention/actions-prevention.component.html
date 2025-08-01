@@ -1,10 +1,10 @@
 <div class="max-w-md mx-auto px-2">
   <!-- Onglets -->
-  <div class="grid grid-cols-2 gap-0 border-b border-gray-200 overflow-hidden">
+  <div class="grid grid-cols-3 gap-0 border-b border-gray-200 overflow-hidden">
     @for (tab of tabs; track tab; let i = $index) {
       <button
         (click)="selectedTab = i"
-        class="flex-1 px-4 py-2 text-center font-semibold transition focus:outline-none
+        class="flex-1 py-2 text-center font-semibold transition focus:outline-none
             sm:px-6 sm:py-3 sm:text-lg"
         [ngClass]="selectedTab === i
         ? 'bg-white text-blue-900'
@@ -17,9 +17,20 @@
   </div>
 
   <!-- Contenu -->
-  <div class="bg-blue-900 text-white text-justify px-4 pt-2 shadow mt-0">
-    <p class="mb-4 whitespace-pre-line text-sm leading-tight hide-on-long">{{ tabs[selectedTab].content }}</p>
-    <p class="mb-4 whitespace-pre-line hide-on-short">{{ tabs[selectedTab].content1 }}</p>
+  <div class="bg-blue-900 text-white text-justify px-4 py-4 shadow mt-0">
+    @if (tabs[selectedTab].label === 'Logement') {
+    <p>
+      En tant que particulier, je peux bénéficier d'aides financières pour adapter mon logement, 
+      si les travaux de réduction de vulnérabilité sont prescrits par un 
+      <a href="https://outil2amenagement.cerema.fr/outils/plan-prevention-des-risques-naturels-dinondation-ppri-pprni#:~:text=Accueil-,Le%20plan%20de%20pr%C3%A9vention%20des%20risques,'inondation%20(PPRi%20ou%20PPRNi)&text=Le%20PPRNi%20est%20un%20outil,et%20l'utilisation%20des%20sols." target="_blank" rel="noopener noreferrer" class="text-blue-200 underline hover:text-blue-100 transition-colors">
+        plan de prévention des risques naturels d'inondation (PPRi)</a> ou dans le cadre d'un 
+      <a href="https://outil2amenagement.cerema.fr/outils/programme-dactions-prevention-des-inondations-papi" target="_blank" rel="noopener noreferrer" class="text-blue-200 underline hover:text-blue-100 transition-colors">
+        programmes d'actions de prévention des inondations (PAPI)
+      </a>.
+    </p>
+    <p> Selon que votre commune soit couverte par un PAPI ou un PPRi, consultez les onglets suivants pour découvrir les aménagements adaptés. Vous trouverez les démarches de demande d’aides sur le site 
+      <a href="https://www.georisques.gouv.fr/etre-accompagne/le-soutien-financier-du-fonds-barnier-0" target="_blank" rel="noopener noreferrer" class="text-blue-200 underline hover:text-blue-100 transition-colors">Géorisques</a>.</p>    
+    }
 
     @if (tabs[selectedTab].label === 'PAPI') {
       <app-papi></app-papi>
