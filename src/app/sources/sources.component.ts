@@ -33,6 +33,12 @@ export class SourcesComponent {
       title: "Georisques",
       url: "https://www.georisques.gouv.fr/",
       publishDate: ""
+    },
+    {
+      id: 4,
+      title: "CCR – Caisse Centrale de Réassurance",
+      url: "https://www.ccr.fr/",
+      publishDate: ""
     }
   ];
 }

@@ -32,7 +32,7 @@ export class ActionsPreventionMouvementComponent {
       {
         label: 'Guide technique',
         image: 'assets/images/jpg/guide.webp',
-        content: "Un guide technique <a href='https://www.ecologie.gouv.fr/sites/default/files/documents/dgaln_plaquette_secheresse_construction_sols_argileux_nov_2004.pdf' target='_blank' rel='noopener noreferrer' class='text-blue-400 underline'> « prévenir les désordres dans l'habitat individuel »</a>  est à ma disposition.",
+        content: "Un guide technique <a href='https://www.ecologie.gouv.fr/sites/default/files/documents/construire_en_terrain_argileux_reglementation_et_bonnes_pratiques-v_modif%20ccmi.pdf' target='_blank' rel='noopener noreferrer' class='text-blue-400 underline'> « prévenir les désordres dans l'habitat individuel »</a>  est à ma disposition.",
         content1: ''
       }
     ];
