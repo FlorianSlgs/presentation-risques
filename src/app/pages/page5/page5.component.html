@@ -1,7 +1,23 @@
 <section class="min-h-screen w-full flex flex-col bg-[url('assets/images/jpg/Pont_Juvenal.jpg')] bg-cover bg-center relative">
-    <div class="mt-4 flex items-center justify-center w-full pr-6 max-w-none">
-        <span class="text-xl text-white sm:text-2xl font-bold whitespace-nowrap ml-6">KIT D'URGENCE</span>
-        <span class="text-sm text-white"> Ce kit préparé à l’avance vous permettra de rester chez vous plus sereinement dans l’attente des secours.</span>
+    <div class="mt-4 flex items-center justify-center w-full px-6 max-w-none">
+        <div class="rounded-xl p-4 max-w-4xl w-full">
+            <div class="flex flex-col items-center justify-center gap-3">
+                <!-- Titre principal -->
+                <div class="flex items-center justify-center gap-3">
+                    <span class="text-xl sm:text-2xl font-bold text-white whitespace-nowrap">KIT D'URGENCE</span>
+                </div>
+                
+                <!-- Texte explicatif -->
+                <div class="text-center">
+                    <p class="text-white text-sm sm:text-base leading-relaxed hidden sm:block">
+                        En cas de catastrophe majeure, les 72 premières heures sont les plus critiques. Un kit d’urgence préparé à l’avance vous aide à rester serein chez vous en attendant les secours, ou à partir rapidement si nécessaire.
+                    </p>
+                    <p class="leading-tight text-white text-sm sm:text-base sm:hidden block">
+                        En cas de catastrophe majeure, ce kit préparé à l’avance vous aide à rester serein chez vous en attendant les secours, ou à partir rapidement si nécessaire.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Container pour l'image PNG et les zones de texte -->
@@ -239,8 +255,13 @@
         </div>
     </div>
 
-    <div class="absolute bottom-6 right-6 z-50 text-sm font-medium transition-colors duration-300 text-white/80">
-        <a>Sources</a> <br>
-        <a>Mentions Légales</a>
+    <!-- Footer avec liens côte à côte sur mobile -->
+    <div class="absolute bottom-2 right-2 sm:bottom-6 sm:right-6 z-50 text-sm font-medium transition-colors duration-300 text-white/80">
+        <div class="flex flex-col sm:flex-col items-end gap-1 sm:gap-0">
+            <div class="flex gap-4 sm:flex-col sm:gap-0">
+                <a  routerLink="/sources" class="cursor-pointer hover:text-white">Sources</a>
+                <a  routerLink="/mentions" class="cursor-pointer hover:text-white">Mentions Légales</a>
+            </div>
+        </div>
     </div>
 </section>

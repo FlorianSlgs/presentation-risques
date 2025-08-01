@@ -1,0 +1,93 @@
+<!-- app.component.html (version mise à jour) -->
+<div class="snap-scroll-container relative h-screen overflow-hidden">
+  <!-- Navigation dots -->
+  <nav class="fixed right-2 sm:right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col space-y-3">
+    @for (section of sections; track section; let i = $index) {
+      <button
+        (click)="scrollToSection(i)"
+        [ngClass]="getDotClasses(i) + ' transition-colors duration-300 ' + (isArrowWhite() ? 'border-white' : 'border-black')"
+        [attr.aria-label]="'Aller à la section ' + (i + 1)"
+        [title]="section.title">
+        <span class="sr-only">Section {{ i + 1 }}</span>
+      </button>
+    }
+  </nav>
+
+  <!-- Sections container -->
+  <div
+    #sectionsContainer
+    class="snap-scroll-wrapper transition-transform duration-500 ease-out"
+    [style.transform]="'translateY(-' + (currentSection * 100) + 'vh)'">
+
+    <!-- Section dynamiques avec les composants -->
+    @for (section of sections; track section; let i = $index) {
+      <div>
+        <!-- Section Intro -->
+        @if (section.id === 'accueil') {
+          <app-accueil
+            (nextSection)="onIntroNext()">
+          </app-accueil>
+        }
+        <!-- Section Page 1 -->
+        @if (section.id === 'page1') {
+          <app-page1
+            >
+          </app-page1>
+        }
+        <!-- Section Page 2 -->
+        @if (section.id === 'page2') {
+          <app-page2
+            >
+          </app-page2>
+        }
+        <!-- Section Page 3 -->
+        @if (section.id === 'page3') {
+          <app-page3
+            >
+          </app-page3>
+        }
+        <!-- Section Page 4 -->
+        @if (section.id === 'page4') {
+          <app-page4
+            >
+          </app-page4>
+        }
+        <!-- Section Page 5 -->
+        @if (section.id === 'page5') {
+          <app-page5
+            >
+          </app-page5>
+        }
+      </div>
+    }
+
+  </div>
+
+  <!-- Navigation arrows -->
+  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex flex-col space-y-2 arrow-nav mb-3.5 lg:mb-0  hidden sm:block">
+    @if (currentSection < sections.length - 1) {
+      <button
+        (click)="nextSection()">
+        <svg
+          class="w-16 h-6 transition-colors duration-300"
+          [ngClass]="isArrowWhite() ? 'text-white' : 'text-black'"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 60 20"
+          width="60"
+          height="20"
+          >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M44 6l-14 12L16 6"></path>
+        </svg>
+      </button>
+    }
+  </div>
+
+  <!-- Instructions -->
+  <div
+    class="fixed bottom-6 right-6 z-50 text-sm font-medium hidden sm:block transition-colors duration-300"
+    [ngClass]="isArrowWhite() ? 'sm:hidden' : 'text-black/80'"
+    >
+    <p>Faire défiler vers le bas pour découvrir cette présentation numérique.</p>
+  </div>
+</div>
