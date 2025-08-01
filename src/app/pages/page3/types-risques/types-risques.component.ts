@@ -20,8 +20,7 @@ export class TypesRisquesMouvementComponent {
     {
       label: "Volume",
       image: 'assets/images/jpg/sismique_2.webp',
-      content: 'Les volumes mis en jeu peuvent être compris entre quelques m3 et des millions de m3. Les déplacements peuvent être lents (quelques mm par an) ou très rapides (quelques centaines de mètres par jour).',
+      content: 'Les volumes mis en jeu peuvent être compris entre quelques m³ et des millions de m³. Les déplacements peuvent être lents (quelques mm par an) ou très rapides (quelques centaines de mètres par jour).',
       content1: '',
     }
   ];
-}

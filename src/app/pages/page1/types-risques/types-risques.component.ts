@@ -15,7 +15,7 @@ export class TypesRisquesComponent {
       label: 'Submersion',
       image: 'assets/images/jpg/submersion_Plan de travail 1.png',
       content: 'Lors de conditions météorologiques extrêmes sur le littoral, la hausse du niveau marin peut conduire à l’inondation des zones côtières par la mer.',
-      content1 : '',
+      content1 : 'Ce phénomène est amplifié lorsque les coefficients de marée sont élevés.',
     },
     {
       label: 'Débordement',
