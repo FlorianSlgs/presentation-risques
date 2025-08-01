@@ -6,11 +6,12 @@ import { TypesRisquesComponent } from './types-risques/types-risques.component';
 import { ConsequencesComponent } from "./consequences/consequences.component";
 import { ActionsPreventionComponent } from './actions-prevention/actions-prevention.component';
 import { SituationComponent } from './situation/situation.component';
+import { InondationComponent } from './inondation/inondation.component';
 
 @Component({
   selector: 'app-page1',
   standalone: true,
-  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent, ActionsPreventionComponent, SituationComponent],
+  imports: [CommonModule, VideoComponent, TypesRisquesComponent, ConsequencesComponent, ActionsPreventionComponent, SituationComponent, InondationComponent],
   templateUrl:"page1.component.html"
 })
 export class Page1Component {
@@ -20,10 +21,11 @@ export class Page1Component {
 
 cards = [
   "Vidéo",
+  "Inondation",
   "Types d'inondations",
   "Situation",
   "Conséquences",
-  "Actions préventives"
+  "Actions préventives",
 ];
 current = 0;
 

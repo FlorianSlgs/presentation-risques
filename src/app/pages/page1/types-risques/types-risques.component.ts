@@ -12,10 +12,10 @@ export class TypesRisquesComponent {
   selectedTab = 0;
   tabs = [
     {
-      label: 'Inondations',
-      image: 'assets/images/svg/inondations.svg',
-      content: 'Une inondation est une submersion temporaire de zones habituellement hors d’eau suite à des précipitations soutenues.',
-      content1 : 'Le département de l’Hérault est particulièrement exposé aux épisodes méditerranéens communément appelés épisodes cévenols. Ils sont liés à des remontées d’air chaud et humide en provenance de la Méditerranée, susceptibles de produire des orages violents et de fortes pluies.',
+      label: 'Submersion',
+      image: 'assets/images/jpg/submersion_Plan de travail 1.png',
+      content: 'Lors de conditions météorologiques extrêmes sur le littoral, la hausse du niveau marin peut conduire à l’inondation des zones côtières par la mer.',
+      content1 : '',
     },
     {
       label: 'Débordement',
