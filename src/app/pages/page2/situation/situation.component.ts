@@ -12,10 +12,16 @@ import * as L from 'leaflet';
 export class SituationFeuxComponent implements OnInit, AfterViewInit {
   private map!: L.Map;
   private centroid: L.LatLngExpression = [43.5797, 3.3672];
+  private isMobile: boolean = false;
+  private mapElementId: string = 'map-feux';
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // Détection simple du mobile
+    this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                    || window.innerWidth <= 768;
+  }
 
   ngAfterViewInit(): void {
     this.initMap();
@@ -24,9 +30,22 @@ export class SituationFeuxComponent implements OnInit, AfterViewInit {
   }
 
   private initMap(): void {
-    this.map = L.map('map', {
+    this.map = L.map(this.mapElementId, {
       center: this.centroid,
-      zoom: 8
+      zoom: 8,
+      // Désactive le drag uniquement sur mobile
+      dragging: !this.isMobile,
+      // Permet le zoom tactile (pincement)
+      touchZoom: true,
+      // Désactive le zoom à la molette pour éviter les conflits avec le scroll
+      scrollWheelZoom: false,
+      // Permet le double-clic pour zoomer
+      doubleClickZoom: true,
+      // Désactive le zoom par rectangle
+      boxZoom: false,
+      tapTolerance: 15,
+      // Désactive le déplacement au clavier sur mobile
+      keyboard: !this.isMobile
     });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -34,6 +53,11 @@ export class SituationFeuxComponent implements OnInit, AfterViewInit {
       minZoom: 3,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(this.map);
+
+    // Désactive également le panning inertiel sur mobile
+    if (this.isMobile && this.map.options.inertia) {
+      this.map.options.inertia = false;
+    }
   }
 
   private addHeraultBorders(): void {
@@ -63,7 +87,7 @@ export class SituationFeuxComponent implements OnInit, AfterViewInit {
       { nom: "Villeveyrac", degats:'200 ha brûlés', couts:'', date:'5 septembre 2023', coords: [43.501, 3.607] }
     ];
 
-    let grabelsMarker: L.Marker | null = null; // <-- déclaration unique ici
+    let stBauzilleMarker: L.Marker | null = null;
 
     villes.forEach(ville => {
       const popupContent = `
@@ -77,15 +101,22 @@ export class SituationFeuxComponent implements OnInit, AfterViewInit {
         .bindPopup(popupContent);
 
       if (ville.nom === 'St-Bauzille de la Sylve') {
-        grabelsMarker = marker;
+        stBauzilleMarker = marker;
       }
     });
 
-    // Ouvre le popup de Grabels après avoir ajouté tous les marqueurs
-    if (grabelsMarker) {
+    // Ouvre le popup de St-Bauzille de la Sylve après avoir ajouté tous les marqueurs
+    if (stBauzilleMarker) {
       setTimeout(() => {
-        grabelsMarker!.openPopup();
+        stBauzilleMarker!.openPopup();
       }, 200);
+    }
+  }
+
+  ngOnDestroy(): void {
+    // Détruit la carte Leaflet proprement
+    if (this.map) {
+      this.map.remove();
     }
   }
 }
